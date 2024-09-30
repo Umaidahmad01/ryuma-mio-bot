@@ -10,7 +10,7 @@ async def cb_handler(client: Bot, query: CallbackQuery):
     data = query.data
     if data == "about":
         await query.message.edit_text(
-            text =f"<b>○ 𝐌ᴀɪɴ ᴄʜᴀɴɴᴇʟ : <a href='t.me/RyumaHindiSubAnime'>𝐑ʏᴜᴍᴀ 𝐀ɴɪᴍᴇ</a>\n○ 𝐎ɴɢᴏɪɴɢ ᴄʜᴀɴɴᴇʟ : <a href='https://t.me/RyumaOngoingAnime'>𝐎ɴɢᴏɪɴɢ 𝐑ʏᴜᴍᴀ</a>\n○ 𝐎ᴜʀ ᴄᴏᴍᴍᴜɴɪᴛʏ : <a href='https://t.me/+YgEZxLLPXQo0YTg1'>𝐂ʟɪᴄᴋ ʜᴇʀᴇ</a>\n○ 𝐃ᴇᴠᴇʟᴏᴘᴇʀ : <a href='https://t.me/Urr_Sanjiii'>𝐒ᴀɴJɪ 𝐒αᴍᴀ</a></b>",
+            text =f"<b>○ 𝐌ᴀɪɴ ᴄʜᴀɴɴᴇʟ : <a href='t.me/RyumaHindiSubAnime'>𝐑ʏᴜᴍᴀ 𝐀ɴɪᴍᴇ</a>\n○ 𝐎ɴɢᴏɪɴɢ ᴄʜᴀɴɴᴇʟ : <a href='https://t.me/RyumaOngoingAnime'>𝐎ɴɢᴏɪɴɢ 𝐑ʏᴜᴍᴀ</a>\n○ 𝐎ᴜʀ ᴄᴏᴍᴍᴜɴɪᴛʏ : <a href='https://t.me/+YgEZxLLPXQo0YTg1'>𝐂ʟɪᴄᴋ ʜᴇʀᴇ</a>\n○ 𝐃ᴇᴠᴇʟᴏᴘᴇʀ : <a href='https://t.me/Anime_Flux'>𝐒ᴀɴJɪ 𝐒αᴍᴀ</a></b>",
             disable_web_page_preview = True,
             reply_markup = InlineKeyboardMarkup(
                 [ 
