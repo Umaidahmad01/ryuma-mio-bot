@@ -31,16 +31,16 @@ async def start_command(client: Client, message):
         if client.link_one is not None and message.from_user.id not in ADMINS and not await is_requested_one(message):
             btn = [[
                 InlineKeyboardButton(
-                    "Jᴏɪɴ Cʜᴀɴɴᴇʟ 1", url=client.link_one),
+                    "• ᴊᴏɪɴ ᴄʜᴀɴɴᴇʟ", url=client.link_one),
                         InlineKeyboardButton(
-                            "Jᴏɪɴ Cʜᴀɴɴᴇʟ 2", url=client.link_two)
-                          ],[ InlineKeyboardButton(" Jᴏɪɴ Cʜᴀɴɴᴇʟ 3 ", url="https://t.me/+BvUzjMcsh2k4ZjZl")]
+                            "ᴊᴏɪɴ ᴄʜᴀɴɴᴇʟ •", url=client.link_two)
+                          ],[ InlineKeyboardButton("• ᴊᴏɪɴ ʙᴀᴄᴋᴜᴘ •", url="https://t.me/+BvUzjMcsh2k4ZjZl")]
             ]
             try:
                 btn.append(
                       [
                         InlineKeyboardButton(
-                             text = '♻️ 𝐓ʀʏ 𝐀ɢᴀɪɴ ♻️',
+                             text = '• ᴛʀʏ ᴀɢᴀɪɴ •',
                              url = f"https://t.me/{client.username}?start={message.command[1]}"
                         )
                     ]
@@ -49,7 +49,7 @@ async def start_command(client: Client, message):
                 pass
             await client.send_message(
                 chat_id=message.from_user.id,
-                text="𝐊ᴏɴɴɪᴄʜɪᴡᴀ 𝐁ᴀᴋᴀ⚡,\n\nᴊᴏɪɴ ᴏᴜʀ ᴄʜᴀɴɴᴇʟ𝐬 ᴀɴᴅ ᴛʜᴇɴ ᴄʟɪᴄᴋ ᴏɴ ♻️ 𝐓ʀʏ 𝐀ɢᴀɪɴ ♻️ ʙᴜᴛᴛᴏɴ ᴛᴏ ɢᴇᴛ ʏᴏᴜʀ ʀᴇᴏ̨ᴜᴇꜱᴛᴇᴅ ᴀɴɪᴍᴇ ꜰɪʟᴇ.\n\n𝐌ᴀɪɴ 𝐂ʜᴀɴɴᴇʟ :\n@RyumaHindiSubAnime",
+                text="𝐊ᴏɴɴɪᴄʜɪᴡᴀ 𝐁ᴀᴋᴀ⚡,\n\nᴊᴏɪɴ ᴏᴜʀ ᴄʜᴀɴɴᴇʟ𝐬 ᴀɴᴅ ᴛʜᴇɴ ᴄʟɪᴄᴋ ᴏɴ • ᴛʀʏ ᴀɢᴀɪɴ • ʙᴜᴛᴛᴏɴ ᴛᴏ ɢᴇᴛ ʏᴏᴜʀ ʀᴇᴏ̨ᴜᴇꜱᴛᴇᴅ ᴀɴɪᴍᴇ ꜰɪʟᴇ.\n\n𝐌ᴀɪɴ 𝐂ʜᴀɴɴᴇʟ :\n@RyumaHindiSubAnime",
                 reply_markup=InlineKeyboardMarkup(inline_keyboard=btn),
                 parse_mode=ParseMode.MARKDOWN
             )
@@ -58,14 +58,14 @@ async def start_command(client: Client, message):
         if client.link_two is not None and message.from_user.id not in ADMINS and not await is_requested_two(message):
             btn = [[
                 InlineKeyboardButton(
-                    "Jᴏɪɴ Cʜᴀɴɴᴇʟ 1", url=client.link_two)
+                    "• ᴊᴏɪɴ ᴄʜᴀɴɴᴇʟ", url=client.link_two)
             ]]
             try:
                 if client.link_one is not None and message.from_user.id not in ADMINS and not await is_requested_one(message):
                     btn.append(
                           [ 
                         InlineKeyboardButton(
-                            "Jᴏɪɴ Cʜᴀɴɴᴇʟ 2", url=client.link_one)
+                            "ᴊᴏɪɴ ᴄʜᴀɴɴᴇʟ •", url=client.link_one)
                           ]
                     )
             except Exception as e:
@@ -74,7 +74,7 @@ async def start_command(client: Client, message):
                 btn.append(
                       [
                         InlineKeyboardButton(
-                             text = '♻️ 𝐓ʀʏ 𝐀ɢᴀɪɴ ♻️',
+                             text = '• ᴛʀʏ ᴀɢᴀɪɴ •',
                              url = f"https://t.me/{client.username}?start={message.command[1]}"
                         )
                     ]
@@ -83,7 +83,7 @@ async def start_command(client: Client, message):
                 pass
             await client.send_message(
                 chat_id=message.from_user.id,
-                text="𝐊ᴏɴɴɪᴄʜɪᴡᴀ 𝐁ᴀᴋᴀ⚡,\n\nᴊᴏɪɴ ᴏᴜʀ ᴄʜᴀɴɴᴇʟ𝐬 ᴀɴᴅ ᴛʜᴇɴ ᴄʟɪᴄᴋ ᴏɴ ♻️ 𝐓ʀʏ 𝐀ɢᴀɪɴ ♻️ ʙᴜᴛᴛᴏɴ ᴛᴏ ɢᴇᴛ ʏᴏᴜʀ ʀᴇᴏ̨ᴜᴇꜱᴛᴇᴅ ᴀɴɪᴍᴇ ꜰɪʟᴇ.\n\n𝐌ᴀɪɴ 𝐂ʜᴀɴɴᴇʟ :\n@RyumaHindiSubAnime",
+                text="𝐊ᴏɴɴɪᴄʜɪᴡᴀ 𝐁ᴀᴋᴀ⚡,\n\nᴊᴏɪɴ ᴏᴜʀ ᴄʜᴀɴɴᴇʟ𝐬 ᴀɴᴅ ᴛʜᴇɴ ᴄʟɪᴄᴋ ᴏɴ • ᴛʀʏ ᴀɢᴀɪɴ • ʙᴜᴛᴛᴏɴ ᴛᴏ ɢᴇᴛ ʏᴏᴜʀ ʀᴇᴏ̨ᴜᴇꜱᴛᴇᴅ ᴀɴɪᴍᴇ ꜰɪʟᴇ.\n\n𝐌ᴀɪɴ 𝐂ʜᴀɴɴᴇʟ :\n@RyumaHindiSubAnime",
                 reply_markup=InlineKeyboardMarkup(inline_keyboard=btn),
                 parse_mode=ParseMode.MARKDOWN
             )
@@ -235,12 +235,12 @@ Unsuccessful: <code>{unsuccessful}</code></b>"""
 async def purge_req_one(bot, message):
     r = await message.reply("`processing...`")
     await delete_all_one()
-    await r.edit("**Req db Cleared**" )
+    await r.edit("Request channel 1st has been Changed for this bot" )
 
 
 @Bot.on_message(filters.command('purge_two') & filters.private & filters.user(ADMINS))
 async def purge_req_two(bot, message):
     r = await message.reply("`processing...`")
     await delete_all_two()
-    await r.edit("**Req db Cleared**" )
+    await r.edit("Request channel 2nd has been Changed for this bot" )
     
