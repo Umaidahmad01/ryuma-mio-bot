@@ -9,18 +9,7 @@ from pyrogram.enums import ParseMode
 import sys
 from datetime import datetime
 
-from config import API_HASH, APP_ID, LOGGER, TG_BOT_TOKEN, TG_BOT_WORKERS, FORCE_SUB_CHANNEL, CHANNEL_ID, PORT, CHANNEL_ONE, CHANNEL_TWO
-
-
-name ="""
-██╗███████╗███████╗███████╗██╗░░░░░███████╗░██████╗░█████╗░███╗░░░███╗
-██║██╔════╝██╔════╝██╔════╝██║░░░░░██╔════╝██╔════╝██╔══██╗████╗░████║
-██║█████╗░░█████╗░░█████╗░░██║░░░░░███████╗██║░░░░░███████║██╔████╔██║
-██║██╔══╝░░██╔══╝░░██╔══╝░░██║░░░░░╚════██║██║░░░░░██╔══██║██║╚██╔╝██║
-██║██║░░░░░███████╗███████╗███████╗███████║╚██████╗██║░░██║██║░╚═╝░██║
-╚═╝╚═╝░░░░░╚══════╝╚══════╝╚══════╝╚══════╝░╚═════╝╚═╝░░╚═╝╚═╝░░░░░╚═╝
-                                                                      """
-
+from config import API_HASH, APP_ID, LOGGER, TG_BOT_TOKEN, TG_BOT_WORKERS, FORCE_SUB_CHANNEL_1, FORCE_SUB_CHANNEL_2, FORCE_SUB_CHANNEL_3, FORCE_SUB_CHANNEL_4, CHANNEL_ID, PORT
 
 class Bot(Client):
     def __init__(self):
@@ -40,27 +29,58 @@ class Bot(Client):
         await super().start()
         usr_bot_me = await self.get_me()
         self.uptime = datetime.now()
-        self.link_one = None
-        self.link_two = None
-        if CHANNEL_ONE:
+
+        if FORCE_SUB_CHANNEL_1:
             try:
-                link_a = (await self.create_chat_invite_link(chat_id=CHANNEL_ONE, creates_join_request=True)).invite_link 
-                self.link_one = link_a                                     
+                link = (await self.get_chat(FORCE_SUB_CHANNEL_1)).invite_link
+                if not link:
+                    await self.export_chat_invite_link(FORCE_SUB_CHANNEL_1)
+                    link = (await self.get_chat(FORCE_SUB_CHANNEL_1)).invite_link
+                self.invitelink = link
             except Exception as a:
                 self.LOGGER(__name__).warning(a)
                 self.LOGGER(__name__).warning("Bot can't Export Invite link from Force Sub Channel!")
-                self.LOGGER(__name__).warning(f"Please Double check the CHANNEL_ONE value and Make sure Bot is Admin in channel with Invite Users via Link Permission, Current Force Sub Channel Value: {CHANNEL_ONE}")
-                self.LOGGER(__name__).info("\nBot Stopped. Join https://t.me/CodeXBotzSupport for support")
+                self.LOGGER(__name__).warning(f"Please Double check the FORCE_SUB_CHANNEL_1 value and Make sure Bot is Admin in channel with Invite Users via Link Permission, Current Force Sub Channel Value: {FORCE_SUB_CHANNEL_1}")
+                self.LOGGER(__name__).info("\nBot Stopped. Join https://t.me/weebs_support for support")
                 sys.exit()
-        if CHANNEL_TWO:
+        if FORCE_SUB_CHANNEL_2:
             try:
-                link_b = (await self.create_chat_invite_link(chat_id=CHANNEL_TWO, creates_join_request=True)).invite_link 
-                self.link_two = link_b                                  
-            except Exception as b:
-                self.LOGGER(__name__).warning(b)
+                link = (await self.get_chat(FORCE_SUB_CHANNEL_2)).invite_link
+                if not link:
+                    await self.export_chat_invite_link(FORCE_SUB_CHANNEL_2)
+                    link = (await self.get_chat(FORCE_SUB_CHANNEL_2)).invite_link
+                self.invitelink2 = link
+            except Exception as a:
+                self.LOGGER(__name__).warning(a)
                 self.LOGGER(__name__).warning("Bot can't Export Invite link from Force Sub Channel!")
-                self.LOGGER(__name__).warning(f"Please Double check the CHANNEL_TWO value and Make sure Bot is Admin in channel with Invite Users via Link Permission, Current Force Sub Channel Value: {CHANNEL_TWO}")
-                self.LOGGER(__name__).info("\nBot Stopped. Join https://t.me/CodeXBotzSupport for support")
+                self.LOGGER(__name__).warning(f"Please Double check the FORCE_SUB_CHANNEL_2 value and Make sure Bot is Admin in channel with Invite Users via Link Permission, Current Force Sub Channel Value: {FORCE_SUB_CHANNEL_2}")
+                self.LOGGER(__name__).info("\nBot Stopped. Join https://t.me/weebs_support for support")
+                sys.exit()
+        if FORCE_SUB_CHANNEL_3:
+            try:
+                link = (await self.get_chat(FORCE_SUB_CHANNEL_3)).invite_link
+                if not link:
+                    await self.export_chat_invite_link(FORCE_SUB_CHANNEL_3)
+                    link = (await self.get_chat(FORCE_SUB_CHANNEL_3)).invite_link
+                self.invitelink3 = link
+            except Exception as a:
+                self.LOGGER(__name__).warning(a)
+                self.LOGGER(__name__).warning("Bot can't Export Invite link from Force Sub Channel!")
+                self.LOGGER(__name__).warning(f"Please Double check the FORCE_SUB_CHANNEL_3 value and Make sure Bot is Admin in channel with Invite Users via Link Permission, Current Force Sub Channel Value: {FORCE_SUB_CHANNEL_3}")
+                self.LOGGER(__name__).info("\nBot Stopped. Join https://t.me/weebs_support for support")
+                sys.exit()
+        if FORCE_SUB_CHANNEL_4:
+            try:
+                link = (await self.get_chat(FORCE_SUB_CHANNEL_4)).invite_link
+                if not link:
+                    await self.export_chat_invite_link(FORCE_SUB_CHANNEL_4)
+                    link = (await self.get_chat(FORCE_SUB_CHANNEL_4)).invite_link
+                self.invitelink4 = link
+            except Exception as a:
+                self.LOGGER(__name__).warning(a)
+                self.LOGGER(__name__).warning("Bot can't Export Invite link from Force Sub Channel!")
+                self.LOGGER(__name__).warning(f"Please Double check the FORCE_SUB_CHANNEL_4 value and Make sure Bot is Admin in channel with Invite Users via Link Permission, Current Force Sub Channel Value: {FORCE_SUB_CHANNEL_4}")
+                self.LOGGER(__name__).info("\nBot Stopped. Join https://t.me/weebs_support for support")
                 sys.exit()
         try:
             db_channel = await self.get_chat(CHANNEL_ID)
@@ -70,21 +90,23 @@ class Bot(Client):
         except Exception as e:
             self.LOGGER(__name__).warning(e)
             self.LOGGER(__name__).warning(f"Make Sure bot is Admin in DB Channel, and Double check the CHANNEL_ID Value, Current Value {CHANNEL_ID}")
-            self.LOGGER(__name__).info("\nBot Stopped. Join https://t.me/CodeXBotzSupport for support")
+            self.LOGGER(__name__).info("\nBot Stopped. Join https://t.me/weebs_support for support")
             sys.exit()
 
         self.set_parse_mode(ParseMode.HTML)
-        self.LOGGER(__name__).info(f"Bot Running..!\n\nCreated by \nhttps://t.me/CodeXBotz")
-        self.LOGGER(__name__).info(f""" \n\n       
-██╗███████╗███████╗███████╗██╗░░░░░███████╗░██████╗░█████╗░███╗░░░███╗
-██║██╔════╝██╔════╝██╔════╝██║░░░░░██╔════╝██╔════╝██╔══██╗████╗░████║
-██║█████╗░░█████╗░░█████╗░░██║░░░░░███████╗██║░░░░░███████║██╔████╔██║
-██║██╔══╝░░██╔══╝░░██╔══╝░░██║░░░░░╚════██║██║░░░░░██╔══██║██║╚██╔╝██║
-██║██║░░░░░███████╗███████╗███████╗███████║╚██████╗██║░░██║██║░╚═╝░██║
-╚═╝╚═╝░░░░░╚══════╝╚══════╝╚══════╝╚══════╝░╚═════╝╚═╝░░╚═╝╚═╝░░░░░╚═╝
-                                                                      """)
+        self.LOGGER(__name__).info(f"Bot Running..!\n\nCreated by \nhttps://t.me/codeflix_bots")
+        self.LOGGER(__name__).info(f"""       
+
+
+  ___ ___  ___  ___ ___ _    _____  _____  ___ _____ ___ 
+ / __/ _ \|   \| __| __| |  |_ _\ \/ / _ )/ _ \_   _/ __|
+| (_| (_) | |) | _|| _|| |__ | | >  <| _ \ (_) || | \__ \
+ \___\___/|___/|___|_| |____|___/_/\_\___/\___/ |_| |___/
+                                                         
+ 
+                                          """)
         self.username = usr_bot_me.username
-        # web-response
+        #web-response
         app = web.AppRunner(await web_server())
         await app.setup()
         bind_address = "0.0.0.0"
@@ -93,3 +115,4 @@ class Bot(Client):
     async def stop(self, *args):
         await super().stop()
         self.LOGGER(__name__).info("Bot stopped.")
+                  
