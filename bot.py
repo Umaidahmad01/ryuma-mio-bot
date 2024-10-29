@@ -9,7 +9,7 @@ from pyrogram.enums import ParseMode
 import sys
 from datetime import datetime
 
-from config import API_HASH, APP_ID, LOGGER, TG_BOT_TOKEN, TG_BOT_WORKERS, REQUEST_SUB_CHANNEL_1, REQUEST_SUB_CHANNEL_2, CHANNEL_ID, PORT
+from config import API_HASH, APP_ID, LOGGER, TG_BOT_TOKEN, TG_BOT_WORKERS, FORCE_SUB_CHANNEL1, FORCE_SUB_CHANNEL2, FORCE_SUB_CHANNEL3, CHANNEL_ID, PORT
 
 class Bot(Client):
     def __init__(self):
@@ -30,7 +30,7 @@ class Bot(Client):
         usr_bot_me = await self.get_me()
         self.uptime = datetime.now()
 
-        if REQUEST_SUB_CHANNEL_1:
+        if FORCE_SUB_CHANNEL1:
             try:
                 link = (await self.get_chat(REQUEST_SUB_CHANNEL_1)).invite_link
                 if not link:
@@ -43,7 +43,7 @@ class Bot(Client):
                 self.LOGGER(__name__).warning(f"Please Double check the REQUEST_SUB_CHANNEL_1 value and Make sure Bot is Admin in channel with Invite Users via Link Permission, Current Force Sub Channel Value: {REQUEST_SUB_CHANNEL_1}")
                 self.LOGGER(__name__).info("\nBot Stopped. Join https://t.me/weebs_support for support")
                 sys.exit()
-        if REQUEST_SUB_CHANNEL_2:
+        if FORCE_SUB_CHANNEL2:
             try:
                 link = (await self.get_chat(REQUEST_SUB_CHANNEL_2)).invite_link
                 if not link:
@@ -56,7 +56,7 @@ class Bot(Client):
                 self.LOGGER(__name__).warning(f"Please Double check the REQUEST_SUB_CHANNEL_2 value and Make sure Bot is Admin in channel with Invite Users via Link Permission, Current Force Sub Channel Value: {REQUEST_SUB_CHANNEL_2}")
                 self.LOGGER(__name__).info("\nBot Stopped. Join https://t.me/weebs_support for support")
                 sys.exit()
-        if REQUEST_SUB_CHANNEL_3:
+        if FORCE_SUB_CHANNEL3:
             try:
                 link = (await self.get_chat(REQUEST_SUB_CHANNEL_3)).invite_link
                 if not link:
