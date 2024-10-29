@@ -23,6 +23,8 @@ CHANNEL_ID = int(os.environ.get("CHANNEL_ID", "-1002469949696"))
 
 FORCE_SUB_CHANNEL1 = int(os.environ.get("CHANNEL_ONE", "-1002368514987"))
 FORCE_SUB_CHANNEL2 = int(os.environ.get("CHANNEL_TWO", "-1002285339464"))
+CHANNEL_ONE = int(os.environ.get("CHANNEL_ONE", "-1002368514987"))
+CHANNEL_TWO = int(os.environ.get("CHANNEL_ONE", "-1002285339464"))
 
 #OWNER ID
 OWNER_ID = int(os.environ.get("OWNER_ID", "5652322516"))
